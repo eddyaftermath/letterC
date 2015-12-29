@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+<title> Tela 3</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="tela1.css" type="text/css">
+<script src="jquery-2.1.4.min.js"></script>
+<script src="jcanvas.min.js"></script>
+
+
+	<style>
+	#canvas{
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		border: 6px solid green;
+		-webkit-border-radius: 100px;
+		background: #00ff00;
+
+	}
+
+	.next{
+    position: absolute;
+    top: 520px;
+    right: 230px;
+  	}
+
+  	.back{
+    position: absolute;
+    top: 520px;
+    left: 230px;
+  	}
+  	
+	</style>
+	
+</head>
+
+	<body>
+	<canvas id="canvas" width="850" height="490"> </canvas>
+	<audio id="myaudio"> 
+		<source src="recording/5.mp3"></source>
+			Audio
+	</audio>
+
+	<a class="next" href="letterc6.html"> <img src="next.png"></a>
+	<a class="back" href="letterc4.html"> <img src="prev.png"></a>
+
+	<script>
+	var audio = $('#myaudio')[0];
+	
+
+	$('canvas').addLayer({
+		type: 'text',
+		name: 'Bu',
+		groups: 'letterc5',
+		fillStyle: 'black',
+		fontFamily: 'Arial Rounded Bold',
+		fontSize: '130pt',
+		text: 'Bu',
+		x:100, y:200,
+	})
+
+	$('canvas').addLayer({
+		type:'text',
+		name: 'ket',
+		groups: 'letterc5',
+		fillStyle: 'black',
+		fontFamily: 'Arial Rounded Bold',
+		fontSize: '130pt',
+		text: 'ket',
+		x:365, y:200,
+		
+	})
+
+	$('canvas').addLayer({
+		type: 'image',
+		groups: 'letterc5',
+		name: 'bucket',
+		source: 'bucket.png',
+		x:670, y:240
+	})
+
+		$('canvas').addLayer({
+		type: 'text',
+		name: 'c',
+		groups: 'letterc5',
+		fillStyle: 'red',
+		fontFamily: 'Arial Rounded Bold',
+		fontSize: '130pt',
+		text: 'c',
+		x:230, y:200, 
+		click: function() {
+	    audio.play();
+  	},
+	})
+
+	.drawLayers();
+	 
+	</script>
+
+	</body>
+</html>
